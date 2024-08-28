@@ -11,6 +11,7 @@ click = "^8.1.7"
 gcn-kafka = "^0.3.3"
 python = "^3.9"
 prometheus-client = "^0.20.0"
+boto3 = "^1.35.7"
 
 [tool.poetry.scripts]
 gcn-monitor = "gcn_monitor.cli:main"
