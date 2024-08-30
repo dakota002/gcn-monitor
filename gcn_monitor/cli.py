@@ -40,7 +40,8 @@ def host_port(host_port_str):
     show_default=True,
     help="Log level",
 )
-def main(prometheus, loglevel):
+@click.option("--bucketarn", help="Bucket ARN")
+def main(prometheus, loglevel, bucketarn):
     """Monitor connectivity of a Kafka client.
 
     Specify the Kafka client configuration in environment variables using the
@@ -60,4 +61,4 @@ def main(prometheus, loglevel):
     )
     log.info("Prometheus listening on %s", prometheus.netloc)
 
-    kafka.run()
+    kafka.run(bucketarn)
